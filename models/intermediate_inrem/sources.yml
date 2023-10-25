@@ -1,0 +1,86 @@
+version: 2
+sources:
+- name: merged
+  schema: intermediate_inrem
+  tables:
+  - name: fl1011_mar16_2016
+    identifier: fl1011_mar16_2016
+    description: ''
+  - name: fl1011_mar21_2016
+    identifier: fl1011_mar21_2016
+    description: ''
+  - name: fl1015_mar21_2016
+    identifier: fl1015_mar21_2016
+    description: ''
+  - name: fl1112_mar16_2016
+    identifier: fl1112_mar16_2016
+    description: ''
+  - name: fl1112_mar21_2016
+    identifier: fl1112_mar21_2016
+    description: ''
+  - name: fl1213_all_mar17_2016
+    identifier: fl1213_all_mar17_2016
+    description: ''
+  - name: fl1213_mar17_2016
+    identifier: fl1213_mar17_2016
+    description: ''
+  - name: fl1213_mar21_2016
+    identifier: fl1213_mar21_2016
+    description: ''
+  - name: fl1314_mar17_2016
+    identifier: fl1314_mar17_2016
+    description: ''
+  - name: fl1314_mar21_2016
+    identifier: fl1314_mar21_2016
+    description: ''
+  - name: fl1415_mar17_2016
+    identifier: fl1415_mar17_2016
+    description: ''
+  - name: fl1415_mar21_2016
+    identifier: fl1415_mar21_2016
+    description: ''
+  - name: fl_allstates_2015
+    identifier: fl_allstates_2015
+    description: ''
+  - name: fl_high_may_2017
+    identifier: fl_high_may_2017
+    description: ''
+  - name: fl_jun14_2016
+    identifier: fl_jun14_2016
+    description: ''
+  - name: fl_may_201314
+    identifier: fl_may_201314
+    description: ''
+  - name: fl_may_201415
+    identifier: fl_may_201415
+    description: ''
+  - name: fl_toohigh_mar16_2016
+    identifier: fl_toohigh_mar16_2016
+    description: ''
+  - name: fluoride
+    identifier: fluoride
+    description: ''
+  - name: guj_wq
+    identifier: guj_wq
+    description: ''
+  - name: guj_wq_blocks
+    identifier: guj_wq_blocks
+    description: ''
+  - name: jamui_mar28_2016
+    identifier: jamui_mar28_2016
+    description: ''
+  - name: jhabua201011
+    identifier: jhabua201011
+    description: ''
+  - name: num_pageo
+    identifier: num_pageo
+    description: ''
+  - name: summary_201314
+    identifier: summary_201314
+    description: ''
+  - name: xmldata_1
+    identifier: xmldata_1
+    description: ''
+  - name: xmldata_2
+    identifier: xmldata_2
+    description: ''

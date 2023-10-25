@@ -1,0 +1,894 @@
+version: 2
+models:
+- name: fl1011_mar16_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: Fluoride__mg_l_
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1011_mar21_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: Fluoride__mg_l_
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1015_mar21_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: StateName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: Fluoride__mg_l_
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1112_mar16_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: Fluoride__mg_l_
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1112_mar21_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: Fluoride__mg_l_
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1213_all_mar17_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: HabitationName_1
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: AboveP
+    description: ''
+  - name: DistrictName_1
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1213_mar17_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: HabitationName_1
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: AboveP
+    description: ''
+  - name: DistrictName_1
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1213_mar21_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: Report
+    description: ''
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: AboveP
+    description: ''
+  - name: DistrictName_1
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1314_mar17_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: AboveP
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1314_mar21_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: AboveP
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1415_mar17_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: AboveP
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl1415_mar21_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: AboveP
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl_allstates_2015
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: Unnamed__3
+    description: ''
+  - name: District_Name
+    description: ''
+  - name: SNo_
+    description: ''
+  - name: Unnamed__1
+    description: ''
+- name: fl_high_may_2017
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: State_Dist
+    description: ''
+  - name: StateName
+    description: ''
+  - name: Unnamed__3
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Fluoride_in_PPM
+    description: ''
+  - name: Lab
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl_jun14_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: Sampleno
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: StateName
+    description: ''
+  - name: Fluoride__mg_l_
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl_may_201314
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: State_Dist
+    description: ''
+  - name: StateName
+    description: ''
+  - name: Unnamed__3
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Fluoride_in_PPM
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: State_Dist_1
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Unnamed__15
+    description: ''
+  - name: Location
+    description: ''
+- name: fl_may_201415
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Fluoride_in_PPM
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: fl_toohigh_mar16_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: Sampleno
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: StateName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: Fluoride__mg_l_
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: guj_wq
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: c7676
+    description: ''
+  - name: A
+    description: ''
+  - name: B
+    description: ''
+  - name: Fluoride_habitations
+    description: ''
+  - name: C
+    description: ''
+  - name: affected_flouride
+    description: ''
+  - name: Block_Name_1
+    description: ''
+  - name: Block_Name_2
+    description: ''
+  - name: Block_Name_3
+    description: ''
+  - name: F_habitation_class
+    description: ''
+  - name: State_1
+    description: ''
+  - name: State_2
+    description: ''
+  - name: Block_Name
+    description: ''
+  - name: Unnamed__12
+    description: ''
+  - name: _A2_A
+    description: ''
+  - name: Sheet1
+    description: ''
+  - name: Unnamed__18
+    description: ''
+  - name: Unnamed__19
+    description: ''
+  - name: Unnamed__16
+    description: ''
+  - name: _
+    description: ''
+  - name: __1
+    description: ''
+  - name: affected_flouride_1
+    description: ''
+  - name: __b
+    description: ''
+  - name: __1_b
+    description: ''
+  - name: Unnamed__5
+    description: ''
+  - name: Unnamed__6
+    description: ''
+  - name: State
+    description: ''
+- name: guj_wq_blocks
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: Block_Name
+    description: ''
+  - name: Fluoride_habitations
+    description: ''
+  - name: State
+    description: ''
+- name: jamui_mar28_2016
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: Fluoride__mg_l_
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: jhabua201011
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: HabitationName
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: Fluoride
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: StateName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: row
+    description: ''
+  - name: Lab
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+- name: num_pageo
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: file
+    description: ''
+  - name: num
+    description: ''
+  - name: pageo
+    description: ''
+  - name: sheet
+    description: ''
+  - name: row
+    description: ''
+- name: summary_201314
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: DistrictName
+    description: ''
+  - name: Avg_Fluoride_Value__mg_l_
+    description: ''
+  - name: State
+    description: ''
+  - name: Unnamed__2
+    description: ''
+  - name: No_of_reported_high_values
+    description: ''
+- name: xmldata_1
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: file
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: AboveP
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: sheet
+    description: ''
+  - name: row
+    description: ''
+- name: xmldata_2
+  description: ''
+  +schema: intermediate_inrem
+  columns:
+  - name: _airbyte_ab_id
+    description: ''
+    tests:
+    - unique
+    - not_null
+  - name: StateName
+    description: ''
+  - name: LabTestingDate
+    description: ''
+  - name: Lab
+    description: ''
+  - name: Sampleno
+    description: ''
+  - name: DistrictName
+    description: ''
+  - name: HabitationName
+    description: ''
+  - name: VillageName
+    description: ''
+  - name: file
+    description: ''
+  - name: PanchayatName
+    description: ''
+  - name: BlockName
+    description: ''
+  - name: ActualLevel_31
+    description: ''
+  - name: sheet
+    description: ''
+  - name: row
+    description: ''
+  - name: TypeOfSource
+    description: ''
+  - name: Location
+    description: ''
+  - name: ActualLevel_1
+    description: ''

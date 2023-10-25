@@ -1,0 +1,2 @@
+{{ config(materialized='table',) }}
+{{ dbt_utils.union_relations(relations=[ref('fl1415_mar17_2016'),ref('fl_toohigh_mar16_2016'),ref('fl1112_mar21_2016'),ref('jamui_mar28_2016'),ref('xmldata_1'),ref('fl1314_mar17_2016'),ref('fl1314_mar21_2016'),ref('fl1415_mar21_2016'),ref('xmldata_2'),ref('fl_may_201415'),ref('fl1011_mar16_2016'),ref('fl1015_mar21_2016'),ref('fl_jun14_2016'),ref('fl1112_mar16_2016'),ref('fl1011_mar21_2016')])}}

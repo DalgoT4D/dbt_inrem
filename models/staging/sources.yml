@@ -1,0 +1,83 @@
+version: 2
+sources:
+- name: inrem
+  schema: staging
+  tables:
+  - name: fl1011_mar16_2016
+    identifier: _airbyte_raw_fl1011_mar16_2016
+    description: ''
+  - name: fl1011_mar21_2016
+    identifier: _airbyte_raw_fl1011_mar21_2016
+    description: ''
+  - name: fl1015_mar21_2016
+    identifier: _airbyte_raw_fl1015_mar21_2016
+    description: ''
+  - name: fl1112_mar16_2016
+    identifier: _airbyte_raw_fl1112_mar16_2016
+    description: ''
+  - name: fl1112_mar21_2016
+    identifier: _airbyte_raw_fl1112_mar21_2016
+    description: ''
+  - name: fl1213_all_mar17_2016
+    identifier: _airbyte_raw_fl1213_all_mar17_2016
+    description: ''
+  - name: fl1213_mar17_2016
+    identifier: _airbyte_raw_fl1213_mar17_2016
+    description: ''
+  - name: fl1213_mar21_2016
+    identifier: _airbyte_raw_fl1213_mar21_2016
+    description: ''
+  - name: fl1314_mar17_2016
+    identifier: _airbyte_raw_fl1314_mar17_2016
+    description: ''
+  - name: fl1314_mar21_2016
+    identifier: _airbyte_raw_fl1314_mar21_2016
+    description: ''
+  - name: fl1415_mar17_2016
+    identifier: _airbyte_raw_fl1415_mar17_2016
+    description: ''
+  - name: fl1415_mar21_2016
+    identifier: _airbyte_raw_fl1415_mar21_2016
+    description: ''
+  - name: fl_allstates_2015
+    identifier: _airbyte_raw_fl_allstates_2015
+    description: ''
+  - name: fl_high_may_2017
+    identifier: _airbyte_raw_fl_high_may_2017
+    description: ''
+  - name: fl_jun14_2016
+    identifier: _airbyte_raw_fl_jun14_2016
+    description: ''
+  - name: fl_may_201314
+    identifier: _airbyte_raw_fl_may_201314
+    description: ''
+  - name: fl_may_201415
+    identifier: _airbyte_raw_fl_may_201415
+    description: ''
+  - name: fl_toohigh_mar16_2016
+    identifier: _airbyte_raw_fl_toohigh_mar16_2016
+    description: ''
+  - name: guj_wq
+    identifier: _airbyte_raw_guj_wq
+    description: ''
+  - name: guj_wq_blocks
+    identifier: _airbyte_raw_guj_wq_blocks
+    description: ''
+  - name: jamui_mar28_2016
+    identifier: _airbyte_raw_jamui_mar28_2016
+    description: ''
+  - name: jhabua201011
+    identifier: _airbyte_raw_jhabua201011
+    description: ''
+  - name: num_pageo
+    identifier: _airbyte_raw_num_pageo
+    description: ''
+  - name: summary_201314
+    identifier: _airbyte_raw_summary_201314
+    description: ''
+  - name: xmldata_1
+    identifier: _airbyte_raw_xmldata_1
+    description: ''
+  - name: xmldata_2
+    identifier: _airbyte_raw_xmldata_2
+    description: ''
