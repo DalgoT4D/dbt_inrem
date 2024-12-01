@@ -1,0 +1,94 @@
+version: 2
+
+models:
+  - name: blocks
+    columns:
+      - name: block_id
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        data_tests:
+          - not_null
+      - name: state
+        data_tests:
+          - not_null
+      - name: district_id
+        data_tests:
+          - not_null
+
+  - name: grampanchayats
+    columns:
+      - name: grampanch_id
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        data_tests:
+          - not_null
+      - name: state
+        data_tests:
+          - not_null
+      - name: district_id
+        data_tests:
+          - not_null
+      - name: block_id
+        data_tests:
+          - not_null
+
+  - name: interventions
+    columns:
+      - name: intervention_id
+        data_tests:
+          - unique
+          - not_null
+      - name: villagetracker_id
+        data_tests:
+          - not_null
+
+  - name: villageentities
+    columns:
+      - name: villageentity_id
+        data_tests:
+          - unique
+          - not_null
+      - name: entity_type
+        data_tests:
+          - not_null
+
+  - name: districts
+    columns:
+      - name: district_id
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        data_tests:
+          - not_null
+      - name: state
+        data_tests:
+          - not_null
+
+  - name: villages
+    columns:
+      - name: village_id
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        data_tests:
+          - not_null
+      - name: state
+        data_tests:
+          - not_null
+      - name: district_id
+        data_tests:
+          - not_null
+      - name: block_id
+        data_tests:
+          - not_null
+      - name: grampanch_id
+        data_tests:
+          - not_null
+
+

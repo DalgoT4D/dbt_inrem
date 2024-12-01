@@ -1,0 +1,28 @@
+sources:
+- name: inrem
+  schema: staging
+  tables:
+  - name: Interventions
+    identifier: Interventions
+    description: 'Water interventions'
+  - name: Block
+    identifier: Block
+    description: 'Blocks'
+  - name: District
+    identifier: District
+    description: 'Districts'
+  - name: State
+    identifier: State
+    description: 'States'
+  - name: GramPanchayat
+    identifier: Gram_Panchayat
+    description: 'GramPanchayats'
+  - name: Village
+    identifier: Village
+    description: 'Villages'
+  - name: VillageEntity
+    identifier: Village_Entity
+    description: 'GramPanchayats'
+  - name: VillageTracker
+    identifier: Village_Tracker
+    description: 'VillageTracker'
