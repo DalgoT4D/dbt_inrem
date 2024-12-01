@@ -7,5 +7,5 @@
     SELECT 
       name AS district_id, 
       state AS state, 
-      district AS name
+      District.district AS name
 FROM {{source('inrem','District')}}
