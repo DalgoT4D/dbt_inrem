@@ -42,9 +42,6 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: villagetracker_id
-        data_tests:
-          - not_null
 
   - name: villageentities
     columns:
@@ -92,3 +89,64 @@ models:
           - not_null
 
 
+  - name: villageentities
+    columns:
+      - name: villageentity_id
+        data_tests:
+          - unique
+          - not_null
+      - name: entity_type
+        data_tests:
+          - not_null
+
+  - name: villagehierarchy
+    columns:
+      - name: village_id
+        data_tests:
+          - unique
+          - not_null
+      - name: villagename
+        data_tests:
+          - not_null
+      - name: grampanchname
+        data_tests:
+          - not_null
+      - name: blockname
+        data_tests:
+          - not_null
+      - name: districtname
+        data_tests:
+          - not_null
+      - name: statename
+        data_tests:
+          - not_null
+
+  - name: villagetracker
+    columns:
+      - name: villagetracker_id
+        data_tests:
+          - unique
+          - not_null
+      - name: villageentity_id
+        data_tests:
+          - not_null
+
+  - name: village_to_village_entity
+    columns:
+      - name: villagetable_id
+        data_tests:
+          - unique
+          - not_null
+      - name: villageentity_id
+        data_tests:
+          - not_null
+
+  - name: village_to_village_tracker
+    columns:
+      - name: villagetable_id
+        data_tests:
+          - unique
+          - not_null
+      - name: villagetracker_id
+        data_tests:
+          - not_null
