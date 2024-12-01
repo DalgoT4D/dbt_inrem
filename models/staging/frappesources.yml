@@ -26,3 +26,7 @@ sources:
   - name: VillageTracker
     identifier: Village_Tracker
     description: 'VillageTracker'
+
+  - name: VillageTable
+    identifier: Village_Table
+    description: 'VillageTable'
