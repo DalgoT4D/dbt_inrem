@@ -10,7 +10,7 @@
       envqualityreports.approve_by AS approve_by,
       envqualityreports.sample_ref AS sample_ref,
       envqualityreports.test_narra AS test_narrative,
-      envqualityreports.report_date AS report_date,
+      envqualityreports.report_date AS reporting_date,
       envqualityreports.test_method AS test_method,
       envqualityreports.test_vendor AS test_vendor,
       envqualityreports.test_options AS test_options,
