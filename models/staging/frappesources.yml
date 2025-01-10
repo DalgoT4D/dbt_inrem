@@ -30,3 +30,6 @@ sources:
   - name: VillageTable
     identifier: Village_Table
     description: 'VillageTable'
+  - name: Behaviour
+    identifier: Behaviour
+    description: 'Behaviour'

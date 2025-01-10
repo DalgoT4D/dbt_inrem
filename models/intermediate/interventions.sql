@@ -5,13 +5,20 @@
   ) 
 }}
     SELECT 
-      name AS intervention_id, 
-      parent AS villagetracker_id, 
-      inter_type AS intervention_type,
-      date_begin AS intervention_date,
-      status_inter AS status,
-      imp_type AS implementor,
-      num_hh AS num_households,
-      freq AS freq,
-      idx AS idx
-FROM {{source('inrem','Interventions')}}
+      interventions.name AS intervention_id, 
+      interventions.parent AS villagetracker_id, 
+      vttve.villageentity_id AS villageentity_id,
+      interventions.inter_type AS intervention_type,
+      interventions.date_begin AS date_begin,
+      interventions.creation AS reporting_date,
+      interventions.status_inter AS status,
+      interventions.imp_type AS implementor,
+      interventions.num_hh AS num_households,
+      interventions.freq AS freq,
+      interventions.idx AS idx
+FROM {{source('inrem','Interventions')}} AS interventions
+
+JOIN {{ ref('village_tracker_to_village_entity') }} AS vttve
+
+ON
+  interventions.parent = vttve.villagetracker_id

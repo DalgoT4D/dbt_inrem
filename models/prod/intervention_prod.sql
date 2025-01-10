@@ -8,10 +8,12 @@
 SELECT 
     intervention_id,
     intervention_type,
-    DATE(intervention_date) as intervention_date,
-    EXTRACT(YEAR FROM DATE(intervention_date)) as intervention_year,
-    EXTRACT(MONTH FROM DATE(intervention_date)) as intervention_month,
-    FORMAT_DATE('%Y-%m', DATE(intervention_date)) as intervention_year_month,
+    villageentity_id,
+    date_begin as date_begin,
+    reporting_date AS reporting_date,
+    EXTRACT(YEAR FROM DATE(reporting_date)) as reporting_year,
+    EXTRACT(MONTH FROM DATE(reporting_date)) as reporting_month,
+    FORMAT_DATE('%Y-%m', DATE(reporting_date)) as reporting_year_month,
     status,
     implementor,
     num_households,
@@ -32,4 +34,4 @@ JOIN
     {{ref('villagehierarchy')}} AS villagehierarchy
 ON V2VT.village_id = villagehierarchy.village_id
 
-WHERE intervention_date IS NOT NULL
+WHERE reporting_date IS NOT NULL
