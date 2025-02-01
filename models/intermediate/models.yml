@@ -89,16 +89,6 @@ models:
           - not_null
 
 
-  - name: villageentities
-    columns:
-      - name: villageentity_id
-        data_tests:
-          - unique
-          - not_null
-      - name: entity_type
-        data_tests:
-          - not_null
-
   - name: villagehierarchy
     columns:
       - name: village_id
