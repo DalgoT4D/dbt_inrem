@@ -33,3 +33,12 @@ sources:
   - name: Behaviour
     identifier: Behaviour
     description: 'Behaviour'
+  - name: EnvQualityReport
+    identifier: Env_Quality_Report
+    description: 'Environmental Quality Report'
+  - name: EnvQualityReportTable
+    identifier: Env_Quality_Report_Table
+    description: 'Environmental Quality Report Table'
+  - name: ListofEnvQualityReports
+    identifier: List_of_Env_Quality_Reports
+    description: 'List of Environmental Quality Reports'
