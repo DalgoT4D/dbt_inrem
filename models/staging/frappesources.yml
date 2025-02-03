@@ -5,40 +5,562 @@ sources:
   - name: Interventions
     identifier: Interventions
     description: 'Water interventions'
-  - name: Block
-    identifier: Block
-    description: 'Blocks'
-  - name: District
-    identifier: District
-    description: 'Districts'
+    columns:
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: date_begin
+        identifier: date_begin
+        description: 'Date of intervention'
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+      - name: parent
+        identifier: parent
+        description: 'The Village tracker object to which the intervention is linked'
+      - name: parenttype
+        identifier: parenttype
+        description: 'The type of the parent, in this case always "Village tracker"'
+        data_tests:  
+          - accepted_values: 
+              values: ["Village Tracker"]
+      - name: docstatus
+        identifier: docstatus
+        description: 'Not used'
+      - name: imp_type
+        identifier: imp_type
+        description: 'Not used'
+      - name: uptime
+        identifier: uptime
+        description: 'Not used'
+      - name: idx
+        identifier: idx
+        description: 'Not used'
+      - name: freq
+        identifier: freq
+        description: 'Not used'
+      - name: num_hh
+        identifier: num_hh
+        description: 'Number of households affected by the intervention'
+      - name: inter_type
+        identifier: inter_type
+        description: 'Type of intervention'
+      - name: status_inter
+        identifier: status_inter
+        description: 'Status of the intervention'
+        data_tests:  
+          - accepted_values: 
+              values: ["Functional", "Not Functional", ""]
+      - name: parentfield
+        identifier: parentfield
+        description: 'Not used'
+        data_tests:  
+          - accepted_values: 
+              values: ["interv"]
+
+
   - name: State
     identifier: State
     description: 'States'
+    columns:
+      - name: name
+        identifier: name
+        description: 'Primary key, name of State'
+        data_tests:
+          - unique
+          - not_null
+
+  - name: District
+    identifier: District
+    description: 'Districts'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: state
+        identifier: state
+        description: 'Name of parent State'
+        data_tests:
+          - not_null
+      - name: district
+        identifier: district
+        description: 'Name of District'
+        data_tests:
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+
+  - name: Block
+    identifier: Block
+    description: 'Blocks'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: state
+        identifier: state
+        description: 'Name of parent State'
+        data_tests:
+          - not_null
+      - name: district
+        identifier: district
+        description: 'PK of parent District'
+        data_tests:
+          - not_null
+      - name: block
+        identifier: block
+        description: 'Name of block'
+        data_tests:
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+
   - name: GramPanchayat
     identifier: Gram_Panchayat
     description: 'GramPanchayats'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: state
+        identifier: state
+        description: 'Name of parent State'
+        data_tests:
+          - not_null
+      - name: district
+        identifier: district
+        description: 'PK of District'
+        data_tests:
+          - not_null
+      - name: block
+        identifier: block
+        description: 'PK of Block'
+        data_tests:
+          - not_null
+      - name: grampanch
+        identifier: grampanch
+        description: 'Name of Gram Panchayat'
+        data_tests:
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+
   - name: Village
     identifier: Village
     description: 'Villages'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: state
+        identifier: state
+        description: 'Name of parent State'
+        data_tests:
+          - not_null
+      - name: district
+        identifier: district
+        description: 'PK of District'
+        data_tests:
+          - not_null
+      - name: block
+        identifier: block
+        description: 'PK of Block'
+        data_tests:
+          - not_null
+      - name: grampanch
+        identifier: grampanch
+        description: 'PK of Gram Panchayat'
+        data_tests:
+          - not_null
+      - name: village
+        identifier: village
+        description: 'Name of Village'
+        data_tests:
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+
   - name: VillageEntity
     identifier: Village_Entity
-    description: 'GramPanchayats'
+    description: 'Things which are tracked in a village'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: docstatus
+        identifier: docstatus
+        description: 'Not used'
+      - name: entity_type
+        identifier: entity_type
+        description: 'Type of entity'
+        data_tests:  
+          - accepted_values: 
+              values: ["Village", "Water Source", "School", "Farm", "Anganwadi", "Water Supply Scheme", "Household", "Individual"]
+      - name: entity_identifier
+        identifier: entity_identifier
+        description: 'Identifier of entity'
   - name: VillageTracker
     identifier: Village_Tracker
     description: 'VillageTracker'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+      - name: docstatus
+        identifier: docstatus
+        description: 'Not used'
+      - name: approve_by
+        identifier: approve_by
+        description: 'Approved by, INREM staff member'
+      - name: workflow_state
+        identifier: workflow_state
+        description: 'State of the workflow'
+        data_tests:  
+          - accepted_values: 
+              values: ["Draft", "Approved", "Rejected", "Pending for Approval"]
+      - name: date_survey
+        identifier: date_survey
+        description: 'Date of survey'
+      - name: vill_entity
+        identifier: vill_entity
+        description: 'PK of the Village entity being tracked'
+
 
   - name: VillageTable
     identifier: Village_Table
     description: 'VillageTable'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'PK column'
+        data_tests:
+          - not_null
+          - unique
+      - name: gp
+        identifier: gp
+        description: 'PK of Gram Panchayat'
+        data_tests:
+          - not_null
+      - name: block
+        identifier: block
+        description: 'PK of Block'
+        data_tests:
+          - not_null
+      - name: district
+        identifier: district
+        description: 'PK of District'
+        data_tests:
+          - not_null
+      - name: village
+        identifier: village
+        description: 'PK of Village'
+        data_tests:
+          - not_null
+      - name: parenttype
+        identifier: parenttype
+        description: 'Type of parent'
+        data_tests:  
+          - accepted_values: 
+              values: ["Village Tracker"]
+      - name: parentfield
+        identifier: parentfield
+        description: 'Field in the parent'
+        data_tests:  
+          - accepted_values: 
+              values: ["village"]
+      - name: parent
+        identifier: parent
+        description: 'PK of parent Village Tracker'
+        data_tests:
+          - not_null
+
   - name: Behaviour
     identifier: Behaviour
     description: 'Behaviour'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+      - name: parenttype
+        identifier: parenttype
+        description: 'Type of parent'
+        data_tests:  
+          - accepted_values: 
+              values: ["Village Tracker"]
+      - name: parentfield
+        identifier: parentfield
+        description: 'Field in the parent'
+        data_tests:  
+          - accepted_values: 
+              values: ["behav"]
+      - name: parent
+        identifier: parent
+        description: 'PK of parent Village Tracker'
+        data_tests:
+          - not_null
+      - name: behav
+        identifier: behav
+        description: 'Behaviour being tracked'
+        data_tests:  
+          - not_null
+      - name: behav_follow
+        identifier: behav_follow
+        description: 'Behaviour being followed?'
+        data_tests:  
+          - accepted_values: 
+              values: ["Yes", "No"]
+
   - name: EnvQualityReport
     identifier: Env_Quality_Report
     description: 'Environmental Quality Report'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+      - name: docstatus
+        identifier: docstatus
+        description: 'Not used'
+      - name: purp_test
+        identifier: purp_test
+        description: 'Purpose of the test'
+        data_tests:  
+          - accepted_values: 
+              values: ["Drinking", "Food Production", "Ecological safety"]
+      - name: sample_ref
+        identifier: sample_ref
+        description: 'Reference of the sample'
+      - name: test_narra
+        identifier: test_narra
+        description: 'Narrative of the test'
+      - name: report_date
+        identifier: report_date
+        description: 'Date of the report'
+      - name: test_method
+        identifier: test_method
+        description: 'Method of testing'
+      - name: test_vendor
+        identifier: test_vendor
+        description: 'Vendor of the test'
+      - name: test_options
+        identifier: test_options
+        description: 'Options of the test'
+        data_tests:  
+          - accepted_values: 
+              values: ["Water", "Food"]
+      - name: workflow_state
+        identifier: workflow_state
+        description: 'State of the workflow'
+        data_tests:  
+          - accepted_values: 
+              values: ["Draft", "Approved", "Rejected", "Pending for Approval"]
+
+
   - name: EnvQualityReportTable
     identifier: Env_Quality_Report_Table
     description: 'Environmental Quality Report Table'
+    columns: 
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+      - name: parenttype
+        identifier: parenttype
+        description: 'Type of parent'
+        data_tests:  
+          - accepted_values: 
+              values: ["Env Quality Report"]
+      - name: parentfield
+        identifier: parentfield
+        description: 'Field in the parent'
+        data_tests:  
+          - accepted_values: 
+              values: ["test_data"]
+      - name: parent
+        identifier: parent
+        description: 'PK of parent Env Quality Report'
+        data_tests:
+          - not_null
+      - name: approval_status
+        identifier: approval_status
+        description: 'Approval status'
+        data_tests:  
+          - accepted_values: 
+              values: ["Draft", "Approved", "Rejected", "Pending for Approval"]
+      - name: env_safety
+        identifier: env_safety
+        description: 'Environmental safety'
+        data_tests:  
+          - accepted_values: 
+              values: ["Safe", "Unsafe"]
+      - name: is_tested
+        identifier: is_tested
+        description: 'Is the water tested?'
+        data_tests:  
+          - accepted_values: 
+              values: ["0", "1"]
+      - name: env_para
+        identifier: env_para
+        description: 'Environmental parameter'
+        data_tests:  
+          - accepted_values: 
+              values: ["pH", "TDS", "Turbidity", "Hardness", "Iron", "Fluoride", "Nitrate", "Bacteria", "H2S"]
+      - name: env_unit
+        identifier: env_unit
+        description: 'Environmental unit'
+        data_tests:  
+          - accepted_values: 
+              values: ["Indicator", "NTU", "ppm", "Hazen", "ppb"]
+      - name: env_con
+        identifier: env_con
+        description: 'Environmental concentration'
+
   - name: ListofEnvQualityReports
     identifier: List_of_Env_Quality_Reports
     description: 'List of Environmental Quality Reports'
+    columns:
+      - name: idx
+        identifier: idx
+        description: 'Unused'
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
+      - name: owner
+        identifier: owner
+        description: 'Owner of intervention, INREM staff member'
+      - name: modified_by
+        identifier: modified_by
+        description: 'Last modified by, INREM staff member'
+      - name: parenttype
+        identifier: parenttype
+        description: 'Type of parent'
+        data_tests:  
+          - accepted_values: 
+              values: ["Village Tracker"]
+      - name: parentfield
+        identifier: parentfield
+        description: 'Field in the parent'
+        data_tests:  
+          - accepted_values: 
+              values: ["env_quality"]
+      - name: parent
+        identifier: parent
+        description: 'PK of parent Village Tracker'
+        data_tests:
+          - not_null
+      - name: purp_test
+        identifier: purp_test
+        description: 'Purpose of the test'
+        data_tests:  
+          - accepted_values: 
+              values: ["Domestic consumption", "Irrigation water", "Ecological needs", "Animals consumption", "Wastewater release"]
+      - name: test_report
+        identifier: test_report
+        description: 'Reference of the test report'
+      - name: descr_env_source
+        identifier: descr_env_source
+        description: 'Description of the environmental source'
