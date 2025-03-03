@@ -564,3 +564,15 @@ sources:
       - name: descr_env_source
         identifier: descr_env_source
         description: 'Description of the environmental source'
+
+
+  - name: Demography
+    identifier: Demography
+    description: 'Demography'
+    columns:
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
