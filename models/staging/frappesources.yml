@@ -576,3 +576,14 @@ sources:
         data_tests:
           - unique
           - not_null
+
+  - name: Impact
+    identifier: Impact
+    description: 'Impact'
+    columns:
+      - name: name
+        identifier: name
+        description: 'Primary key'
+        data_tests:
+          - unique
+          - not_null
