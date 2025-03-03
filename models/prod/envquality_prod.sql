@@ -7,6 +7,8 @@
 
 SELECT 
     vttve.villageentity_id,
+    villageentities.latitude,
+    villageentities.longitude,
     envquality_by_villageentity.reporting_date AS reporting_date,
     EXTRACT(YEAR FROM DATE(envquality_by_villageentity.reporting_date)) as reporting_year,
     EXTRACT(MONTH FROM DATE(envquality_by_villageentity.reporting_date)) as reporting_month,
@@ -42,5 +44,9 @@ ON vttve.villageentity_id = v2ve.villageentity_id
 JOIN
     {{ref('villagehierarchy')}} AS villagehierarchy
 ON v2ve.village_id = villagehierarchy.village_id
+
+JOIN 
+  {{ref('villageentities')}} AS villageentities
+ON vttve.villageentity_id = villageentities.villageentity_id
 
 WHERE reporting_date IS NOT NULL

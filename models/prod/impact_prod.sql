@@ -16,6 +16,10 @@ SELECT
     END AS impact_param,
     impact.impact_metric AS impact_metric,
     impact.impact_indicator AS impact_indicator,
+    villagetracker.datesurvey,
+    EXTRACT(YEAR FROM DATE(villagetracker.datesurvey)) as survey_year,
+    EXTRACT(MONTH FROM DATE(villagetracker.datesurvey)) as survey_month,
+    FORMAT_DATE('%Y-%m', DATE(villagetracker.datesurvey)) as survey_year_month,
     villagehierarchy.villagename,
     villagehierarchy.statename,
     villagehierarchy.districtname,
@@ -31,3 +35,6 @@ JOIN
     {{ref('villagehierarchy')}} AS villagehierarchy
 ON V2VT.village_id = villagehierarchy.village_id
 
+JOIN
+    {{ref('villagetracker')}} AS villagetracker
+ON impact.villagetracker_id = villagetracker.villagetracker_id
