@@ -1,4 +1,4 @@
-
+-- could be multiple trackers for each entity
 {{ 
   config(
     materialized='table',
