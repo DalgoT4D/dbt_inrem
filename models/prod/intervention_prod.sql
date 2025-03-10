@@ -6,32 +6,28 @@
 }}
 
 SELECT 
-    intervention_id,
-    intervention_type,
-    villageentity_id,
-    date_begin as date_begin,
-    reporting_date AS reporting_date,
-    EXTRACT(YEAR FROM DATE(reporting_date)) as reporting_year,
-    EXTRACT(MONTH FROM DATE(reporting_date)) as reporting_month,
-    FORMAT_DATE('%Y-%m', DATE(reporting_date)) as reporting_year_month,
-    status,
-    implementor,
-    num_households,
-    freq,
-    idx,
-    villagehierarchy.villagename,
-    villagehierarchy.statename,
-    villagehierarchy.districtname,
-    villagehierarchy.blockname,
-    villagehierarchy.grampanchname
+    interventions.intervention_id,
+    interventions.intervention_type,
+    villagetracker_prod.villageentity_id,
+    interventions.date_begin as date_begin,
+    interventions.reporting_date AS reporting_date,
+    EXTRACT(YEAR FROM DATE(interventions.reporting_date)) as reporting_year,
+    EXTRACT(MONTH FROM DATE(interventions.reporting_date)) as reporting_month,
+    FORMAT_DATE('%Y-%m', DATE(interventions.reporting_date)) as reporting_year_month,
+    interventions.status,
+    interventions.implementor,
+    interventions.num_households,
+    interventions.freq,
+    interventions.idx,
+    villagetracker_prod.villagename,
+    villagetracker_prod.statename,
+    villagetracker_prod.districtname,
+    villagetracker_prod.blockname,
+    villagetracker_prod.grampanchname
 FROM {{ref('interventions')}} AS interventions
     
 JOIN
-    {{ref('village_to_village_tracker')}} as V2VT
-ON interventions.villagetracker_id = V2VT.villagetracker_id
-    
-JOIN
-    {{ref('villagehierarchy')}} AS villagehierarchy
-ON V2VT.village_id = villagehierarchy.village_id
+    {{ref('villagetracker_prod')}} as villagetracker_prod
+ON interventions.villagetracker_id = villagetracker_prod.villagetracker_id
 
 WHERE reporting_date IS NOT NULL
