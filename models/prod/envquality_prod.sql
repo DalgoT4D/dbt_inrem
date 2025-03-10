@@ -6,9 +6,9 @@
 }}
 
 SELECT 
-    vttve.villageentity_id,
-    villageentities.latitude,
-    villageentities.longitude,
+    villagetracker_prod.villageentity_id,
+    villagetracker_prod.latitude,
+    villagetracker_prod.longitude,
     envquality_by_villageentity.reporting_date AS reporting_date,
     EXTRACT(YEAR FROM DATE(envquality_by_villageentity.reporting_date)) as reporting_year,
     EXTRACT(MONTH FROM DATE(envquality_by_villageentity.reporting_date)) as reporting_month,
@@ -26,27 +26,15 @@ SELECT
     envquality_by_villageentity.environmental_safety AS environmental_safety,
     envquality_by_villageentity.is_tested AS is_tested,
     envquality_by_villageentity.approval_status AS approval_status,
-    villagehierarchy.villagename,
-    villagehierarchy.statename,
-    villagehierarchy.districtname,
-    villagehierarchy.blockname,
-    villagehierarchy.grampanchname
+    villagetracker_prod.villagename,
+    villagetracker_prod.statename,
+    villagetracker_prod.districtname,
+    villagetracker_prod.blockname,
+    villagetracker_prod.grampanchname
 FROM {{ref('envquality_by_villageentity')}} AS envquality_by_villageentity
     
 JOIN
-    {{ref('village_tracker_to_village_entity')}} as vttve
-ON envquality_by_villageentity.villagetracker_id = vttve.villagetracker_id
-    
-JOIN
-    {{ref('village_to_village_entity')}} AS v2ve
-ON vttve.villageentity_id = v2ve.villageentity_id
-
-JOIN
-    {{ref('villagehierarchy')}} AS villagehierarchy
-ON v2ve.village_id = villagehierarchy.village_id
-
-JOIN 
-  {{ref('villageentities')}} AS villageentities
-ON vttve.villageentity_id = villageentities.villageentity_id
+    {{ref('villagetracker_prod')}} as villagetracker_prod
+ON envquality_by_villageentity.villagetracker_id = villagetracker_prod.villagetracker_id
 
 WHERE reporting_date IS NOT NULL

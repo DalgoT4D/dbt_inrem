@@ -14,18 +14,14 @@ SELECT
     demography.num_female,
     demography.num_child,
     demography.num_people,
-    villagehierarchy.villagename,
-    villagehierarchy.statename,
-    villagehierarchy.districtname,
-    villagehierarchy.blockname,
-    villagehierarchy.grampanchname
+    villagetracker_prod.villagename,
+    villagetracker_prod.statename,
+    villagetracker_prod.districtname,
+    villagetracker_prod.blockname,
+    villagetracker_prod.grampanchname
 FROM {{ref('demography')}} AS demography
     
 JOIN
-    {{ref('village_to_village_tracker')}} as V2VT
-ON demography.villagetracker_id = V2VT.villagetracker_id
+    {{ref('villagetracker_prod')}} as villagetracker_prod
+ON demography.villagetracker_id = villagetracker_prod.villagetracker_id
     
-JOIN
-    {{ref('villagehierarchy')}} AS villagehierarchy
-ON V2VT.village_id = villagehierarchy.village_id
-

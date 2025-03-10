@@ -8,30 +8,22 @@
 SELECT 
     behaviour.behaviour_id,
     behaviour.behaviour_type,
-    vttve.villageentity_id,
+    villagetracker_prod.villageentity_id,
     behaviour.reporting_date AS reporting_date,
     EXTRACT(YEAR FROM DATE(behaviour.reporting_date)) as reporting_year,
     EXTRACT(MONTH FROM DATE(behaviour.reporting_date)) as reporting_month,
     FORMAT_DATE('%Y-%m', DATE(behaviour.reporting_date)) as reporting_year_month,
     behaviour.behaviour_follow AS behaviour_follow,    
     behaviour.notes AS notes,    
-    villagehierarchy.villagename,
-    villagehierarchy.statename,
-    villagehierarchy.districtname,
-    villagehierarchy.blockname,
-    villagehierarchy.grampanchname
+    villagetracker_prod.villagename,
+    villagetracker_prod.statename,
+    villagetracker_prod.districtname,
+    villagetracker_prod.blockname,
+    villagetracker_prod.grampanchname
 FROM {{ref('behaviour')}} AS behaviour
     
 JOIN
-    {{ref('village_tracker_to_village_entity')}} as vttve
-ON behaviour.villagetracker_id = vttve.villagetracker_id
-    
-JOIN
-    {{ref('village_to_village_entity')}} AS v2ve
-ON vttve.villageentity_id = v2ve.villageentity_id
-
-JOIN
-    {{ref('villagehierarchy')}} AS villagehierarchy
-ON v2ve.village_id = villagehierarchy.village_id
+    {{ref('villagetracker_prod')}} as villagetracker_prod
+ON behaviour.villagetracker_id = villagetracker_prod.villagetracker_id
 
 WHERE reporting_date IS NOT NULL
