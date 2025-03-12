@@ -7,8 +7,6 @@
 
 SELECT 
     villagetracker_prod.villageentity_id,
-    villagetracker_prod.latitude,
-    villagetracker_prod.longitude,
     envquality_by_villageentity.reporting_date AS reporting_date,
     EXTRACT(YEAR FROM DATE(envquality_by_villageentity.reporting_date)) as reporting_year,
     EXTRACT(MONTH FROM DATE(envquality_by_villageentity.reporting_date)) as reporting_month,
@@ -26,6 +24,14 @@ SELECT
     envquality_by_villageentity.environmental_safety AS environmental_safety,
     envquality_by_villageentity.is_tested AS is_tested,
     envquality_by_villageentity.approval_status AS approval_status,
+    villagetracker_prod.entity_type,
+    villagetracker_prod.entity_name,
+    villagetracker_prod.latitude,
+    villagetracker_prod.longitude,
+    villagetracker_prod.datesurvey,
+    EXTRACT(YEAR FROM DATE(villagetracker_prod.datesurvey)) as survey_year,
+    EXTRACT(MONTH FROM DATE(villagetracker_prod.datesurvey)) as survey_month,
+    FORMAT_DATE('%Y-%m', DATE(villagetracker_prod.datesurvey)) as survey_year_month,
     villagetracker_prod.villagename,
     villagetracker_prod.statename,
     villagetracker_prod.districtname,
