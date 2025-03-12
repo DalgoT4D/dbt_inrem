@@ -6,7 +6,7 @@
 
 SELECT 
     villageentities.villageentity_id,
-    villageentities.name,
+    villageentities.entity_name,
     villageentities.entity_type,
     villageentities.latitude,
     villageentities.longitude,

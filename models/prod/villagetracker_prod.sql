@@ -9,7 +9,7 @@ SELECT
     villagetracker.datesurvey,
     villagetracker.villageentity_id,
 
-    villageentity_prod.name,
+    villageentity_prod.entity_name,
     villageentity_prod.entity_type,
     villageentity_prod.latitude,
     villageentity_prod.longitude,
