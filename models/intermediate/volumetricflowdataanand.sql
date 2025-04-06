@@ -13,9 +13,9 @@ select
     else null
   end as Source,
   t.timestamp,
-  EXTRACT(YEAR FROM DATE(t.timestamp)) as reporting_year,
-  EXTRACT(MONTH FROM DATE(t.timestamp)) as reporting_month,
-  FORMAT_DATE('%Y-%m', DATE(t.timestamp)) as reporting_year_month,
+  EXTRACT(YEAR FROM DATE(SAFE.PARSE_TIMESTAMP('%Y/%m/%d %H:%M:%S', t.timestamp))) AS reporting_year,
+  EXTRACT(MONTH FROM DATE(SAFE.PARSE_TIMESTAMP('%Y/%m/%d %H:%M:%S', t.timestamp))) AS reporting_month,
+  FORMAT_DATE('%Y-%m', DATE(SAFE.PARSE_TIMESTAMP('%Y/%m/%d %H:%M:%S', t.timestamp))) AS reporting_year_month,
   case
     when t.timestamp = latest.latest_timestamp then 'Latest'
     else null
