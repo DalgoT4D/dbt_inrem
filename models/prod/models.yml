@@ -1,0 +1,344 @@
+version: 2
+models:
+  - name: villageentity_prod
+    columns:
+      - name: villageentity_id
+        data_type: STRING
+      - name: entity_name
+        data_type: STRING
+      - name: entity_type
+        description: Type of entity
+        data_type: STRING
+      - name: latitude
+        data_type: FLOAT64
+      - name: longitude
+        data_type: FLOAT64
+      - name: village_id
+        data_type: STRING
+      - name: statename
+        data_type: STRING
+      - name: districtname
+        data_type: STRING
+      - name: blockname
+        data_type: STRING
+      - name: grampanchname
+        data_type: STRING
+      - name: villagename
+        data_type: STRING
+  - name: villagetracker_prod
+    columns:
+      - name: villagetracker_id
+        data_type: STRING
+      - name: datesurvey
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+      - name: entity_name
+        data_type: STRING
+      - name: entity_type
+        description: Type of entity
+        data_type: STRING
+      - name: latitude
+        data_type: FLOAT64
+      - name: longitude
+        data_type: FLOAT64
+      - name: village_id
+        data_type: STRING
+      - name: statename
+        data_type: STRING
+      - name: districtname
+        data_type: STRING
+      - name: blockname
+        data_type: STRING
+      - name: grampanchname
+        data_type: STRING
+      - name: villagename
+        data_type: STRING
+  - name: behaviour_prod
+    columns:
+      - name: behaviour_id
+        data_type: STRING
+      - name: behaviour_type
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+      - name: reporting_date
+        data_type: STRING
+      - name: reporting_year
+        data_type: INT64
+      - name: reporting_month
+        data_type: INT64
+      - name: reporting_year_month
+        data_type: STRING
+      - name: behaviour_follow
+        data_type: STRING
+      - name: notes
+        data_type: STRING
+      - name: entity_type
+        description: Type of entity
+        data_type: STRING
+      - name: entity_name
+        data_type: STRING
+      - name: latitude
+        data_type: FLOAT64
+      - name: longitude
+        data_type: FLOAT64
+      - name: datesurvey
+        data_type: STRING
+      - name: survey_year
+        data_type: INT64
+      - name: survey_month
+        data_type: INT64
+      - name: survey_year_month
+        data_type: STRING
+      - name: villagename
+        data_type: STRING
+      - name: statename
+        data_type: STRING
+      - name: districtname
+        data_type: STRING
+      - name: blockname
+        data_type: STRING
+      - name: grampanchname
+        data_type: STRING
+  - name: demography_prod
+    columns:
+      - name: demography_id
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+      - name: num_households
+        data_type: NUMERIC
+      - name: key_respondent
+        data_type: STRING
+      - name: num_male
+        data_type: NUMERIC
+      - name: num_female
+        data_type: NUMERIC
+      - name: num_child
+        data_type: NUMERIC
+      - name: num_people
+        data_type: NUMERIC
+      - name: entity_type
+        description: Type of entity
+        data_type: STRING
+      - name: entity_name
+        data_type: STRING
+      - name: latitude
+        data_type: FLOAT64
+      - name: longitude
+        data_type: FLOAT64
+      - name: datesurvey
+        data_type: STRING
+      - name: survey_year
+        data_type: INT64
+      - name: survey_month
+        data_type: INT64
+      - name: survey_year_month
+        data_type: STRING
+      - name: villagename
+        data_type: STRING
+      - name: statename
+        data_type: STRING
+      - name: districtname
+        data_type: STRING
+      - name: blockname
+        data_type: STRING
+      - name: grampanchname
+        data_type: STRING
+  - name: envquality_safety_by_report
+    columns:
+      - name: villageentity_id
+        data_type: STRING
+      - name: reporting_date
+        data_type: STRING
+      - name: reporting_year
+        data_type: INT64
+      - name: reporting_month
+        data_type: INT64
+      - name: reporting_year_month
+        data_type: STRING
+      - name: overall_environmental_safety
+        data_type: STRING
+      - name: villagename
+        data_type: STRING
+      - name: statename
+        data_type: STRING
+      - name: districtname
+        data_type: STRING
+      - name: blockname
+        data_type: STRING
+      - name: grampanchname
+        data_type: STRING
+  - name: envquality_prod
+    columns:
+      - name: villageentity_id
+        data_type: STRING
+      - name: reporting_date
+        data_type: STRING
+      - name: reporting_year
+        data_type: INT64
+      - name: reporting_month
+        data_type: INT64
+      - name: reporting_year_month
+        data_type: STRING
+      - name: purpose_of_test
+        data_type: STRING
+      - name: description_of_environmental_source
+        data_type: STRING
+      - name: sample_ref
+        description: Reference of the sample
+        data_type: STRING
+      - name: test_narrative
+        data_type: STRING
+      - name: test_method
+        description: Method of testing
+        data_type: STRING
+      - name: test_vendor
+        description: Vendor of the test
+        data_type: STRING
+      - name: test_options
+        description: Options of the test
+        data_type: STRING
+      - name: environmental_parameter
+        data_type: STRING
+      - name: environmental_concentration
+        data_type: NUMERIC
+      - name: environmental_unit
+        data_type: STRING
+      - name: environmental_safety
+        data_type: STRING
+      - name: is_tested
+        description: Is the water tested?
+        data_type: NUMERIC
+      - name: approval_status
+        description: Approval status
+        data_type: STRING
+      - name: entity_type
+        description: Type of entity
+        data_type: STRING
+      - name: entity_name
+        data_type: STRING
+      - name: latitude
+        data_type: FLOAT64
+      - name: longitude
+        data_type: FLOAT64
+      - name: datesurvey
+        data_type: STRING
+      - name: survey_year
+        data_type: INT64
+      - name: survey_month
+        data_type: INT64
+      - name: survey_year_month
+        data_type: STRING
+      - name: villagename
+        data_type: STRING
+      - name: statename
+        data_type: STRING
+      - name: districtname
+        data_type: STRING
+      - name: blockname
+        data_type: STRING
+      - name: grampanchname
+        data_type: STRING
+  - name: intervention_prod
+    columns:
+      - name: intervention_id
+        data_type: STRING
+      - name: intervention_type
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+      - name: date_begin
+        description: Date of intervention
+        data_type: STRING
+      - name: reporting_date
+        data_type: STRING
+      - name: reporting_year
+        data_type: INT64
+      - name: reporting_month
+        data_type: INT64
+      - name: reporting_year_month
+        data_type: STRING
+      - name: status
+        data_type: STRING
+      - name: implementor
+        data_type: STRING
+      - name: num_households
+        data_type: NUMERIC
+      - name: freq
+        description: Not used
+        data_type: STRING
+      - name: idx
+        description: Not used
+        data_type: NUMERIC
+      - name: entity_type
+        description: Type of entity
+        data_type: STRING
+      - name: entity_name
+        data_type: STRING
+      - name: latitude
+        data_type: FLOAT64
+      - name: longitude
+        data_type: FLOAT64
+      - name: datesurvey
+        data_type: STRING
+      - name: survey_year
+        data_type: INT64
+      - name: survey_month
+        data_type: INT64
+      - name: survey_year_month
+        data_type: STRING
+      - name: villagename
+        data_type: STRING
+      - name: statename
+        data_type: STRING
+      - name: districtname
+        data_type: STRING
+      - name: blockname
+        data_type: STRING
+      - name: grampanchname
+        data_type: STRING
+  - name: impact_prod
+    columns:
+      - name: impact_id
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+      - name: impact_unit
+        data_type: STRING
+      - name: impact_notes
+        data_type: STRING
+      - name: impact_param
+        data_type: STRING
+      - name: impact_metric
+        data_type: NUMERIC
+      - name: impact_indicator
+        data_type: STRING
+      - name: entity_type
+        description: Type of entity
+        data_type: STRING
+      - name: entity_name
+        data_type: STRING
+      - name: latitude
+        data_type: FLOAT64
+      - name: longitude
+        data_type: FLOAT64
+      - name: datesurvey
+        data_type: STRING
+      - name: survey_year
+        data_type: INT64
+      - name: survey_month
+        data_type: INT64
+      - name: survey_year_month
+        data_type: STRING
+      - name: villagename
+        data_type: STRING
+      - name: statename
+        data_type: STRING
+      - name: districtname
+        data_type: STRING
+      - name: blockname
+        data_type: STRING
+      - name: grampanchname
+        data_type: STRING

@@ -1,5 +1,4 @@
 version: 2
-
 models:
   - name: blocks
     columns:
@@ -7,35 +6,48 @@ models:
         data_tests:
           - unique
           - not_null
+        data_type: STRING
       - name: name
         data_tests:
           - not_null
+        description: Primary key
+        data_type: STRING
       - name: state
         data_tests:
           - not_null
+        description: Name of parent State
+        data_type: STRING
       - name: district_id
         data_tests:
           - not_null
 
+        data_type: STRING
   - name: grampanchayats
     columns:
       - name: grampanch_id
         data_tests:
           - unique
           - not_null
-      - name: name
-        data_tests:
-          - not_null
+        data_type: STRING
       - name: state
         data_tests:
           - not_null
+        description: Name of parent State
+        data_type: STRING
       - name: district_id
         data_tests:
           - not_null
+        data_type: STRING
       - name: block_id
         data_tests:
           - not_null
 
+        data_type: STRING
+      - name: name
+        data_tests:
+          - not_null
+        description: Primary key
+        data_type: STRING
   - name: interventions
     columns:
       - name: intervention_id
@@ -43,100 +55,326 @@ models:
           - unique
           - not_null
 
+        data_type: STRING
+      - name: villagetracker_id
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+      - name: intervention_type
+        data_type: STRING
+      - name: date_begin
+        description: Date of intervention
+        data_type: STRING
+      - name: reporting_date
+        data_type: STRING
+      - name: status
+        data_type: STRING
+      - name: implementor
+        data_type: STRING
+      - name: num_households
+        data_type: NUMERIC
+      - name: freq
+        description: Not used
+        data_type: STRING
+      - name: idx
+        description: Not used
+        data_type: NUMERIC
   - name: villageentities
     columns:
       - name: villageentity_id
         data_tests:
           - unique
           - not_null
+        data_type: STRING
       - name: entity_type
         data_tests:
           - not_null
 
+        description: Type of entity
+        data_type: STRING
+      - name: entity_name
+        data_type: STRING
+      - name: latitude
+        data_type: FLOAT64
+      - name: longitude
+        data_type: FLOAT64
   - name: districts
     columns:
       - name: district_id
         data_tests:
           - unique
           - not_null
-      - name: name
-        data_tests:
-          - not_null
+        data_type: STRING
       - name: state
         data_tests:
           - not_null
 
+        description: Name of parent State
+        data_type: STRING
+      - name: name
+        data_tests:
+          - not_null
+        description: Primary key
+        data_type: STRING
   - name: village
     columns:
       - name: village_id
         data_tests:
           - unique
           - not_null
+        data_type: STRING
       - name: name
         data_tests:
           - not_null
+        description: Primary key
+        data_type: STRING
       - name: state
         data_tests:
           - not_null
-      - name: district_id
-        data_tests:
-          - not_null
+        description: Name of parent State
+        data_type: STRING
       - name: block_id
         data_tests:
           - not_null
+        data_type: STRING
+      - name: district_id
+        data_tests:
+          - not_null
+        data_type: STRING
       - name: grampanch_id
         data_tests:
           - not_null
 
 
+        data_type: STRING
   - name: villagehierarchy
     columns:
       - name: village_id
         data_tests:
           - unique
           - not_null
+        data_type: STRING
       - name: villagename
         data_tests:
           - not_null
+        data_type: STRING
       - name: grampanchname
         data_tests:
           - not_null
+        data_type: STRING
       - name: blockname
         data_tests:
           - not_null
+        data_type: STRING
       - name: districtname
         data_tests:
           - not_null
+        data_type: STRING
       - name: statename
         data_tests:
           - not_null
 
+        data_type: STRING
   - name: villagetracker
     columns:
       - name: villagetracker_id
         data_tests:
           - unique
           - not_null
+        data_type: STRING
       - name: villageentity_id
         data_tests:
           - not_null
 
+        data_type: STRING
+      - name: datesurvey
+        data_type: STRING
+      - name: idx
+        description: Unused
+        data_type: NUMERIC
   - name: village_to_village_entity
     columns:
       - name: villagetable_id
         data_tests:
           - unique
           - not_null
+        data_type: STRING
+      - name: village_id
+        data_type: STRING
       - name: villageentity_id
         data_tests:
           - not_null
 
+        data_type: STRING
   - name: village_to_village_tracker
     columns:
       - name: villagetable_id
         data_tests:
           - unique
           - not_null
+        data_type: STRING
+      - name: village_id
+        data_type: STRING
       - name: villagetracker_id
         data_tests:
           - not_null
+        data_type: STRING
+  - name: village_tracker_to_village_entity
+    columns:
+      - name: villagetracker_id
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+  - name: behaviour
+    columns:
+      - name: behaviour_id
+        data_type: STRING
+      - name: villagetracker_id
+        data_type: STRING
+      - name: behaviour_type
+        data_type: STRING
+      - name: reporting_date
+        data_type: STRING
+      - name: behaviour_follow
+        data_type: STRING
+      - name: notes
+        data_type: STRING
+  - name: envqualityreport
+    columns:
+      - name: envqualityreport_id
+        data_type: STRING
+      - name: purpose_of_test
+        data_type: STRING
+      - name: approve_by
+        data_type: STRING
+      - name: sample_ref
+        description: Reference of the sample
+        data_type: STRING
+      - name: test_narrative
+        data_type: STRING
+      - name: reporting_date
+        data_type: STRING
+      - name: test_method
+        description: Method of testing
+        data_type: STRING
+      - name: test_vendor
+        description: Vendor of the test
+        data_type: STRING
+      - name: test_options
+        description: Options of the test
+        data_type: STRING
+      - name: workflow_state
+        description: State of the workflow
+        data_type: STRING
+  - name: envqualityreporttable
+    columns:
+      - name: envqualityreporttable_id
+        data_type: STRING
+      - name: envqualityreport_id
+        data_type: STRING
+      - name: environmental_parameter
+        data_type: STRING
+      - name: environmental_concentration
+        data_type: NUMERIC
+      - name: environmental_unit
+        data_type: STRING
+      - name: environmental_safety
+        data_type: STRING
+      - name: is_tested
+        description: Is the water tested?
+        data_type: NUMERIC
+      - name: approval_status
+        description: Approval status
+        data_type: STRING
+  - name: impact
+    columns:
+      - name: impact_id
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+      - name: villagetracker_id
+        data_type: STRING
+      - name: impact_unit
+        data_type: STRING
+      - name: impact_notes
+        data_type: STRING
+      - name: impact_param
+        data_type: STRING
+      - name: impact_metric
+        data_type: NUMERIC
+      - name: impact_indicator
+        data_type: STRING
+  - name: listofenvqualityreports
+    columns:
+      - name: listofenvqualityreports_id
+        data_type: STRING
+      - name: villagetracker_id
+        data_type: STRING
+      - name: villageentity_id
+        data_type: STRING
+      - name: purpose_of_test
+        data_type: STRING
+      - name: envqualityreport_id
+        data_type: STRING
+      - name: description_of_environmental_source
+        data_type: STRING
+  - name: demography
+    columns:
+      - name: demography_id
+        data_type: STRING
+      - name: num_households
+        data_type: NUMERIC
+      - name: villageentity_id
+        data_type: STRING
+      - name: villagetracker_id
+        data_type: STRING
+      - name: key_respondent
+        data_type: STRING
+      - name: num_male
+        data_type: NUMERIC
+      - name: num_female
+        data_type: NUMERIC
+      - name: num_child
+        data_type: NUMERIC
+      - name: num_people
+        data_type: NUMERIC
+  - name: envquality_by_villageentity
+    columns:
+      - name: villageentity_id
+        data_type: STRING
+      - name: villagetracker_id
+        data_type: STRING
+      - name: purpose_of_test
+        data_type: STRING
+      - name: description_of_environmental_source
+        data_type: STRING
+      - name: sample_ref
+        description: Reference of the sample
+        data_type: STRING
+      - name: test_narrative
+        data_type: STRING
+      - name: reporting_date
+        data_type: STRING
+      - name: test_method
+        description: Method of testing
+        data_type: STRING
+      - name: test_vendor
+        description: Vendor of the test
+        data_type: STRING
+      - name: test_options
+        description: Options of the test
+        data_type: STRING
+      - name: environmental_parameter
+        data_type: STRING
+      - name: environmental_concentration
+        data_type: NUMERIC
+      - name: environmental_unit
+        data_type: STRING
+      - name: environmental_safety
+        data_type: STRING
+      - name: is_tested
+        description: Is the water tested?
+        data_type: NUMERIC
+      - name: approval_status
+        description: Approval status
+        data_type: STRING
