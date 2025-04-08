@@ -1,0 +1,2763 @@
+version: 6.13.0
+
+type: DeclarativeSource
+
+check:
+  type: CheckStream
+  stream_names:
+    - Block
+
+definitions:
+  streams:
+    Block:
+      type: DeclarativeStream
+      name: Block
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Block
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Block"
+    Gram Panchayat:
+      type: DeclarativeStream
+      name: Gram Panchayat
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Gram%20Panchayat
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Gram Panchayat"
+    State:
+      type: DeclarativeStream
+      name: State
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: State
+          http_method: GET
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/State"
+    District:
+      type: DeclarativeStream
+      name: District
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: District
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/District"
+    Village:
+      type: DeclarativeStream
+      name: Village
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Village
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Village"
+    Behaviour:
+      type: DeclarativeStream
+      name: Behaviour
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: /Behaviour%20Table
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+            parent: "\"Village Tracker\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Behaviour"
+    Env Quality Parameter:
+      type: DeclarativeStream
+      name: Env Quality Parameter
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Env%20Quality%20Parameter
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Env Quality Parameter"
+    Env Quality Report:
+      type: DeclarativeStream
+      name: Env Quality Report
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: /Env%20Quality%20Report
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+            parent: "\"Village Tracker\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Env Quality Report"
+    Demography:
+      type: DeclarativeStream
+      name: Demography
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: /Demography%20Table
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+            parent: "\"Village Tracker\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Demography"
+    School:
+      type: DeclarativeStream
+      name: School
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: School
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/School"
+    Impact:
+      type: DeclarativeStream
+      name: Impact
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: /Impact%20Table
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+            parent: "\"Village Tracker\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Impact"
+    BehaviourType:
+      type: DeclarativeStream
+      name: BehaviourType
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Behaviour%20Type
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/BehaviourType"
+    Env Quality Report Table:
+      type: DeclarativeStream
+      name: Env Quality Report Table
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Env%20Quality%20Report%20Table
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+            parent: "\"Env Quality Report\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Env Quality Report Table"
+    Env Quality Unit:
+      type: DeclarativeStream
+      name: Env Quality Unit
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Env%20Quality%20Unit
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Env Quality Unit"
+    Impact Indicator:
+      type: DeclarativeStream
+      name: Impact Indicator
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Impact%20Indicator
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Impact Indicator"
+    Impact Unit:
+      type: DeclarativeStream
+      name: Impact Unit
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Impact%20Unit
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Impact Unit"
+    Intervention Type:
+      type: DeclarativeStream
+      name: Intervention Type
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Intervention%20Type
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Intervention Type"
+    List of Env Quality Reports:
+      type: DeclarativeStream
+      name: List of Env Quality Reports
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: List%20of%20Env%20Quality%20Reports
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+            parent: "\"Village Tracker\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/List of Env Quality Reports"
+    Project Plan:
+      type: DeclarativeStream
+      name: Project Plan
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Project%20Plan
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Project Plan"
+    School and Anganwadi Module:
+      type: DeclarativeStream
+      name: School and Anganwadi Module
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: School%20and%20Anganwadi%20Module
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/School and Anganwadi Module"
+    Village agreement:
+      type: DeclarativeStream
+      name: Village agreement
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Village%20agreement
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Village agreement"
+    Village Entity:
+      type: DeclarativeStream
+      name: Village Entity
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Village%20Entity
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Village Entity"
+    Village Tracker:
+      type: DeclarativeStream
+      name: Village Tracker
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Village%20Tracker
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Village Tracker"
+    Water-Safe Communities Household Module:
+      type: DeclarativeStream
+      name: Water-Safe Communities Household Module
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: Water-Safe%20Communities%20Household%20Module
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Water-Safe Communities Household Module"
+    Interventions:
+      type: DeclarativeStream
+      name: Interventions
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: /Intervention%20Table
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+            parent: "\"Village Tracker\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Interventions"
+    Village_Table:
+      type: DeclarativeStream
+      name: Village_Table
+      primary_key:
+        - name
+      retriever:
+        type: SimpleRetriever
+        requester:
+          $ref: "#/definitions/base_requester"
+          path: /Village%20Table
+          http_method: GET
+          request_parameters:
+            fields: "\"[\\\"*\\\"]\""
+            parent: "\"Village Entity\""
+        record_selector:
+          type: RecordSelector
+          extractor:
+            type: DpathExtractor
+            field_path:
+              - data
+        paginator:
+          type: DefaultPaginator
+          page_token_option:
+            type: RequestOption
+            inject_into: request_parameter
+            field_name: limit_start
+          page_size_option:
+            type: RequestOption
+            field_name: limit_page_length
+            inject_into: request_parameter
+          pagination_strategy:
+            type: OffsetIncrement
+            page_size: 10
+      schema_loader:
+        type: InlineSchemaLoader
+        schema:
+          $ref: "#/schemas/Village_Table"
+  base_requester:
+    type: HttpRequester
+    url_base: https://inrem.in/api/resource/
+    authenticator:
+      type: ApiKeyAuthenticator
+      api_token: "{{ config[\"api_key\"] }}"
+      inject_into:
+        type: RequestOption
+        field_name: Authorization
+        inject_into: header
+
+streams:
+  - $ref: "#/definitions/streams/Block"
+  - $ref: "#/definitions/streams/Gram Panchayat"
+  - $ref: "#/definitions/streams/State"
+  - $ref: "#/definitions/streams/District"
+  - $ref: "#/definitions/streams/Village"
+  - $ref: "#/definitions/streams/Behaviour"
+  - $ref: "#/definitions/streams/Env Quality Parameter"
+  - $ref: "#/definitions/streams/Env Quality Report"
+  - $ref: "#/definitions/streams/Demography"
+  - $ref: "#/definitions/streams/School"
+  - $ref: "#/definitions/streams/Impact"
+  - $ref: "#/definitions/streams/BehaviourType"
+  - $ref: "#/definitions/streams/Env Quality Report Table"
+  - $ref: "#/definitions/streams/Env Quality Unit"
+  - $ref: "#/definitions/streams/Impact Indicator"
+  - $ref: "#/definitions/streams/Impact Unit"
+  - $ref: "#/definitions/streams/Intervention Type"
+  - $ref: "#/definitions/streams/List of Env Quality Reports"
+  - $ref: "#/definitions/streams/Project Plan"
+  - $ref: "#/definitions/streams/School and Anganwadi Module"
+  - $ref: "#/definitions/streams/Village agreement"
+  - $ref: "#/definitions/streams/Village Entity"
+  - $ref: "#/definitions/streams/Village Tracker"
+  - $ref: "#/definitions/streams/Water-Safe Communities Household Module"
+  - $ref: "#/definitions/streams/Interventions"
+  - $ref: "#/definitions/streams/Village_Table"
+
+spec:
+  type: Spec
+  connection_specification:
+    type: object
+    $schema: http://json-schema.org/draft-07/schema#
+    required:
+      - api_key
+    properties:
+      api_key:
+        type: string
+        order: 0
+        title: API Key
+        airbyte_secret: true
+    additionalProperties: true
+
+metadata:
+  autoImportSchema:
+    Block: true
+    Gram Panchayat: true
+    State: true
+    District: true
+    Village: true
+    Behaviour: true
+    Env Quality Parameter: true
+    Env Quality Report: true
+    Demography: true
+    School: true
+    Impact: true
+    BehaviourType: true
+    Env Quality Report Table: true
+    Env Quality Unit: true
+    Impact Indicator: true
+    Impact Unit: true
+    Intervention Type: true
+    List of Env Quality Reports: true
+    Project Plan: true
+    School and Anganwadi Module: true
+    Village agreement: true
+    Village Entity: true
+    Village Tracker: true
+    Water-Safe Communities Household Module: true
+    Interventions: true
+    Village_Table: true
+  testedStreams:
+    Block:
+      hasRecords: true
+      streamHash: 2c3f99696da98a55989fc8f2591ca55864962e0a
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Gram Panchayat:
+      hasRecords: true
+      streamHash: e39190096ff7653e2d75d1892783f80211820cfb
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    State:
+      hasRecords: true
+      streamHash: fac17b22c72f3a9c2e2eacfa66711dbe7a2920e2
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    District:
+      hasRecords: true
+      streamHash: 18f23d7f028303b84e30fc907ada1ba1577932e9
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Village:
+      hasRecords: true
+      streamHash: 91cd4f4da6149179cdecc1f88870df547bd65078
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Behaviour:
+      hasRecords: true
+      streamHash: 446f84a257ea86f5d9510562cf9cff573537774e
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Env Quality Parameter:
+      hasRecords: true
+      streamHash: bfc21af3e4bd8ca813c5a9efc44f4b657ae24206
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Env Quality Report:
+      hasRecords: true
+      streamHash: ebf3712b487aca177d32c2b37295e34409de68eb
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Demography:
+      hasRecords: true
+      streamHash: 55356bbdb667774c26c9fbda3ac2933c58beb61d
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    School:
+      hasRecords: true
+      streamHash: 05f7d2e600dad5da2ff2e6beccbb8b480f0cb234
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Impact:
+      hasRecords: true
+      streamHash: 583818c2b25519d601305acc79f970e68d86cef8
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    BehaviourType:
+      hasRecords: true
+      streamHash: 5aab87532699ea962425a02907c046e0047e4c8d
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Env Quality Report Table:
+      hasRecords: true
+      streamHash: 7539eeca0bb336254c697ae3d203ccbb45b38942
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Env Quality Unit:
+      hasRecords: true
+      streamHash: 66a0cc4e25cd71ccfdc4a6e7e28f0416c7db5ac4
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Impact Indicator:
+      hasRecords: true
+      streamHash: eb81c980bf5230564b5a280d3c4729c243323b08
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Impact Unit:
+      hasRecords: true
+      streamHash: 1a745d34600d8b8c4910f64904533820d53721d6
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Intervention Type:
+      hasRecords: true
+      streamHash: 3c98f2caf6b600132f579f2612e7fa9d12595d12
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    List of Env Quality Reports:
+      hasRecords: true
+      streamHash: 0735312bde3c7a6316a225f222c9d1dd13050db6
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Project Plan:
+      hasRecords: true
+      streamHash: 1c51fd7fdd3f0927dc996c6473aa357291bb29d0
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    School and Anganwadi Module:
+      hasRecords: true
+      streamHash: d3b3974ef202dcd45dedb4465cfd5f20f9469d0d
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Village agreement:
+      hasRecords: true
+      streamHash: 581dd0798402d3a7d618aa04999e69ef4c8b764b
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Village Entity:
+      hasRecords: true
+      streamHash: 9cb0623d83bee118f3055f82421fff1a20ba6503
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Village Tracker:
+      hasRecords: true
+      streamHash: 525ba58da4af636ace59a5f635b5f072806a9b45
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Water-Safe Communities Household Module:
+      hasRecords: true
+      streamHash: e3f193807eef19ec1a134e93208e80222d627bf9
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Interventions:
+      hasRecords: true
+      streamHash: 154c63ea82422372f259586d3f74a29b3bb6ade3
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+    Village_Table:
+      hasRecords: true
+      streamHash: 888c01cadf9142f84e15766545113a21c4daeafe
+      hasResponse: true
+      primaryKeysAreUnique: true
+      primaryKeysArePresent: true
+      responsesAreSuccessful: true
+  assist: {}
+
+schemas:
+  Block:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      block:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      district:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      state:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Gram Panchayat:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      block:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      district:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      grampanch:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      state:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  State:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      name:
+        type: string
+    required:
+      - name
+  District:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      district:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      state:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Village:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      block:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      district:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      grampanch:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      state:
+        type:
+          - string
+          - "null"
+      village:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Behaviour:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      behav:
+        type:
+          - string
+          - "null"
+      behav_follow:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      notes_behav:
+        type:
+          - string
+          - "null"
+      owner:
+        type:
+          - string
+          - "null"
+      parent:
+        type:
+          - string
+          - "null"
+      parentfield:
+        type:
+          - string
+          - "null"
+      parenttype:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Env Quality Parameter:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      bis_standard_dwater:
+        type:
+          - number
+          - "null"
+      bis_standard_dwater_lower:
+        type:
+          - number
+          - "null"
+      bis_unit_dwater:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      name_para:
+        type:
+          - string
+          - "null"
+      outlier_lower_limit:
+        type:
+          - number
+          - "null"
+      outlier_upper_limit:
+        type:
+          - number
+          - "null"
+      owner:
+        type:
+          - string
+          - "null"
+      who_limit_dwater:
+        type:
+          - number
+          - "null"
+      who_unit_dwater:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Env Quality Report:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      approve_by:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      purp_test:
+        type:
+          - string
+          - "null"
+      report_date:
+        type:
+          - string
+          - "null"
+      sample_ref:
+        type:
+          - string
+          - "null"
+      test_method:
+        type:
+          - string
+          - "null"
+      test_narra:
+        type:
+          - string
+          - "null"
+      test_options:
+        type:
+          - string
+          - "null"
+      test_vendor:
+        type:
+          - string
+          - "null"
+      workflow_state:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Demography:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      key_resp:
+        type:
+          - string
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      num_child:
+        type:
+          - number
+          - "null"
+      num_female:
+        type:
+          - number
+          - "null"
+      num_hh:
+        type:
+          - number
+          - "null"
+      num_male:
+        type:
+          - number
+          - "null"
+      num_people:
+        type:
+          - number
+          - "null"
+      owner:
+        type:
+          - string
+          - "null"
+      parent:
+        type:
+          - string
+          - "null"
+      parentfield:
+        type:
+          - string
+          - "null"
+      parenttype:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  School:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      block_name:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      dist_name:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      gp_name:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      school_name:
+        type:
+          - string
+          - "null"
+      vill_name:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Impact:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      impact_indicator:
+        type:
+          - string
+          - "null"
+      impact_metric:
+        type:
+          - number
+          - "null"
+      impact_notes:
+        type:
+          - string
+          - "null"
+      impact_param:
+        type:
+          - string
+          - "null"
+      impact_unit:
+        type:
+          - string
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      parent:
+        type:
+          - string
+          - "null"
+      parentfield:
+        type:
+          - string
+          - "null"
+      parenttype:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  BehaviourType:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      type_beh:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Env Quality Report Table:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      approval_status:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      env_conc:
+        type:
+          - number
+          - "null"
+      env_para:
+        type:
+          - string
+          - "null"
+      env_safety:
+        type:
+          - string
+          - "null"
+      env_unit:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      is_tested:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      parent:
+        type:
+          - string
+          - "null"
+      parentfield:
+        type:
+          - string
+          - "null"
+      parenttype:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Env Quality Unit:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      unit_name:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Impact Indicator:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      imp_ind:
+        type:
+          - string
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Impact Unit:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      impact_unit:
+        type:
+          - string
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Intervention Type:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      name_inter:
+        type:
+          - string
+          - "null"
+      owner:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  List of Env Quality Reports:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      descr_env_source:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      parent:
+        type:
+          - string
+          - "null"
+      parentfield:
+        type:
+          - string
+          - "null"
+      parenttype:
+        type:
+          - string
+          - "null"
+      purp_test:
+        type:
+          - string
+          - "null"
+      test_report:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Project Plan:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      end_date:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      plan_desc:
+        type:
+          - string
+          - "null"
+      proj_name:
+        type:
+          - string
+          - "null"
+      proj_short:
+        type:
+          - string
+          - "null"
+      start_date:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  School and Anganwadi Module:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      ang_treat:
+        type:
+          - string
+          - "null"
+      anggrey_sys:
+        type:
+          - string
+          - "null"
+      angstorage_clean:
+        type:
+          - string
+          - "null"
+      angstorage_drink:
+        type:
+          - string
+          - "null"
+      angsys_func:
+        type:
+          - string
+          - "null"
+      angtime_water:
+        type:
+          - string
+          - "null"
+      angvol_cook:
+        type:
+          - string
+          - "null"
+      angvol_drink:
+        type:
+          - string
+          - "null"
+      angwater_treat:
+        type:
+          - string
+          - "null"
+      child_ang:
+        type:
+          - string
+          - "null"
+      child_health:
+        type:
+          - string
+          - "null"
+      child_school:
+        type:
+          - string
+          - "null"
+      class_sch:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      grey_sys:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      primary_cook:
+        type:
+          - string
+          - "null"
+      primary_drink:
+        type:
+          - string
+          - "null"
+      primary_pref:
+        type:
+          - string
+          - "null"
+      primaryang_cook:
+        type:
+          - string
+          - "null"
+      primaryang_drink:
+        type:
+          - string
+          - "null"
+      primaryang_pref:
+        type:
+          - string
+          - "null"
+      res_ang:
+        type:
+          - string
+          - "null"
+      res_school:
+        type:
+          - string
+          - "null"
+      state:
+        type:
+          - string
+          - "null"
+      storage_clean:
+        type:
+          - string
+          - "null"
+      storage_drink:
+        type:
+          - string
+          - "null"
+      sys_func:
+        type:
+          - string
+          - "null"
+      time_water:
+        type:
+          - string
+          - "null"
+      treat_option:
+        type:
+          - string
+          - "null"
+      village:
+        type:
+          - string
+          - "null"
+      vol_cook:
+        type:
+          - string
+          - "null"
+      vol_drink:
+        type:
+          - string
+          - "null"
+      water_treat:
+        type:
+          - string
+          - "null"
+      women_ang:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Village agreement:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      agree_purpose:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      date_agree:
+        type:
+          - string
+          - "null"
+      date_last:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      gp_name:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      inrem_auth:
+        type:
+          - string
+          - "null"
+      inrem_responsibility:
+        type:
+          - string
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      other_responsibility:
+        type:
+          - string
+          - "null"
+      owner:
+        type:
+          - string
+          - "null"
+      vill_auth:
+        type:
+          - string
+          - "null"
+      vill_name:
+        type:
+          - string
+          - "null"
+      vill_responsibility:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Village Entity:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      entity_identifier:
+        type:
+          - string
+          - "null"
+      entity_loc:
+        type:
+          - string
+          - "null"
+      entity_type:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Village Tracker:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      approve_by:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      date_survey:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      vill_entity:
+        type:
+          - string
+          - "null"
+      workflow_state:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Water-Safe Communities Household Module:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      cattle_prime:
+        type:
+          - string
+          - "null"
+      child_fam:
+        type:
+          - string
+          - "null"
+      child_health:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      grey_sys:
+        type:
+          - string
+          - "null"
+      health_aff:
+        type:
+          - string
+          - "null"
+      health_cattle:
+        type:
+          - string
+          - "null"
+      health_eff:
+        type:
+          - string
+          - "null"
+      health_sys:
+        type:
+          - string
+          - "null"
+      home_cattle:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      men_fam:
+        type:
+          - string
+          - "null"
+      men_health:
+        type:
+          - string
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      pri_cook:
+        type:
+          - string
+          - "null"
+      pri_pref:
+        type:
+          - string
+          - "null"
+      res_name:
+        type:
+          - string
+          - "null"
+      state:
+        type:
+          - string
+          - "null"
+      storage_clean:
+        type:
+          - string
+          - "null"
+      storage_drink:
+        type:
+          - string
+          - "null"
+      sys_func:
+        type:
+          - string
+          - "null"
+      time_water:
+        type:
+          - string
+          - "null"
+      treat_option:
+        type:
+          - string
+          - "null"
+      village:
+        type:
+          - string
+          - "null"
+      vol_cook:
+        type:
+          - string
+          - "null"
+      vol_drink:
+        type:
+          - string
+          - "null"
+      water_treat:
+        type:
+          - string
+          - "null"
+      women_fam:
+        type:
+          - string
+          - "null"
+      women_health:
+        type:
+          - string
+          - "null"
+    required:
+      - name
+  Interventions:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      creation:
+        type:
+          - string
+          - "null"
+      date_begin:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      freq:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      imp_type:
+        type:
+          - string
+          - "null"
+      inter_type:
+        type:
+          - string
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      num_hh:
+        type:
+          - number
+          - "null"
+      owner:
+        type:
+          - string
+          - "null"
+      parent:
+        type:
+          - string
+          - "null"
+      parentfield:
+        type:
+          - string
+          - "null"
+      parenttype:
+        type:
+          - string
+          - "null"
+      status_inter:
+        type:
+          - string
+          - "null"
+      uptime:
+        type:
+          - number
+          - "null"
+    required:
+      - name
+  Village_Table:
+    type: object
+    $schema: http://json-schema.org/schema#
+    additionalProperties: true
+    properties:
+      block:
+        type:
+          - string
+          - "null"
+      creation:
+        type:
+          - string
+          - "null"
+      district:
+        type:
+          - string
+          - "null"
+      docstatus:
+        type:
+          - number
+          - "null"
+      gp:
+        type:
+          - string
+          - "null"
+      idx:
+        type:
+          - number
+          - "null"
+      modified:
+        type:
+          - string
+          - "null"
+      modified_by:
+        type:
+          - string
+          - "null"
+      name:
+        type: string
+      owner:
+        type:
+          - string
+          - "null"
+      parent:
+        type:
+          - string
+          - "null"
+      parentfield:
+        type:
+          - string
+          - "null"
+      parenttype:
+        type:
+          - string
+          - "null"
+      village:
+        type:
+          - string
+          - "null"
+    required:
+      - name
